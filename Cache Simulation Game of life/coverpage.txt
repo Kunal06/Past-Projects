@@ -1,0 +1,22 @@
+
+cache.h: a header file with some declarations.
+
+cache.c: the incomplete implementation of the cache.
+
+cache-test.c: a test program to help you debug your implementation.
+
+cache-ref.o: The object code from a reference implementation of the cache.c file. When you use the make command without arguments, this file gets linked to the object code from cache-test.c to produce the executable cache-ref. You can use this program to help determine if your implementation of the cache handling code is correct. This object code file will only work on the undergraduate Linux machines. We will not be providing versions that work with the plethora of systems you might be working with, however, if you are using a linux machine the file might work if you have all the right pieces.
+
+Makefile: typing make at the command prompt will recompile any of the .c files that have changed. and produce the executables: cache-test, cache-ref, and timelife. The latter is used in the last question. You can type make clean to clean things up.
+
+To Build program 
+
+make
+
+Run simulation of cache using 
+
+./cache-test
+
+Run Game of life using 
+
+./timelife

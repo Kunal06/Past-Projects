@@ -1,0 +1,16 @@
+    @Override
+    public int getServicePoints() {
+        return 0;
+    }
+
+    @Override
+    public int getCalloutFee() {
+        return 0;
+    }
+
+    @Override
+    public int getServiceFee() {
+        int serviceFee = 0;
+        serviceFee = DiscountServiceRecord.DISCOUNT_SERVICE_HOURLY * hours;
+        return serviceFee;
+    }

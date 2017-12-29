@@ -1,0 +1,49 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1561\cocoasubrtf200
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 Monaco;}
+{\colortbl;\red255\green255\blue255;\red34\green45\blue53;\red242\green242\blue242;\red0\green0\blue0;
+}
+{\*\expandedcolortbl;;\cssrgb\c17647\c23137\c27059;\csgray\c95825;\csgenericrgb\c0\c0\c0\c55336;
+}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid1\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid1}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs48 \cf2 \expnd0\expndtw0\kerning0
+Makefile\
+\pard\pardeftab720\partightenfactor0
+
+\fs32 \cf2 \'a0\
+\pard\pardeftab720\partightenfactor0
+\cf2 The program has one\'a0required parameter and a second optional one. The parameters are:\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\partightenfactor0
+\ls1\ilvl0\cf2 \kerning1\expnd0\expndtw0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+The name of the file containing the object code to fetch and process.\
+\ls1\ilvl0\kerning1\expnd0\expndtw0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+The 2nd parameter,\'a0which is optional,\'a0specifies the initial value\'a0to set the\'a0program counter (PC) to.\'a0\
+\ls1\ilvl0\kerning1\expnd0\expndtw0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+The 3rd parameter, which can only be present with the 2nd parameter is the number of clock ticks the simulator is allowed to run. If this parameter is not present the simulator runs until an instruction is retired that causes the processor to halt.\
+\pard\pardeftab720\partightenfactor0
+\cf2 \
+\
+In the repo a makefile has been provided to build your program. In a typical usage scenario you would simply type\'a0\
+\
+
+\b make pipe 
+\b0 \
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f1\fs20 \cf3 \cb4 \kerning1\expnd0\expndtw0 \CocoaLigature0 ./pipe Sample1_0x2000_o.txt 0 2\
+
+\f0\fs32 \cf2 \cb1 \expnd0\expndtw0\kerning0
+\CocoaLigature1 \
+\pard\pardeftab720\partightenfactor0
+\cf2 to build the pipe program and you would then run the pipe program from the command line. The supplied makefile uses a hack to allow one to run the pipe program and pass arguments to it. For example if you do\'a0\
+\
+
+\b make run arg1 arg2
+\b0 \
+\
+It will run the pipe program and pass arg1 and arg2, or however many arguments one has specified, as command line arguments. If pipe needs to be rebuilt it will also be rebuilt before being run. The hack to get this work probably only works on gnu make so you may find that it might not work on your own machine, if you are trying to run it there. If that is the case you can copy the existing makefile to file with another name, edit that file to get things to work and then use the -f option to explicitly specify the makefile to use when running the make command.}

@@ -1,0 +1,367 @@
+rm -f *.o
+rm -f vmm
+gcc -g -Werror-implicit-function-declaration -pedantic -std=c99   -c -o main.o main.c
+gcc -g -Werror-implicit-function-declaration -pedantic -std=c99   -c -o tlb.o tlb.c
+gcc -g -Werror-implicit-function-declaration -pedantic -std=c99   -c -o paging.o paging.c
+gcc -g -o vmm main.o tlb.o paging.o
+----------------------------------------------------------------
+Physical memory 16 page 16
+0.004u 0.000s 0:00.01 0.0%	0+0k 0+200io 0pf+0w
+Job exited with status 0
+*** Start checking values 16 x 16, student on left
+Files a16_p16_values.ans and ../../ANS/bookJustValues.txt are identical
+...
+Files a16_p16_values.ans and ../../ANS/bookJustValues.txt are identical
+*** End checking values 16 x 16
+
+@@@ Start checking faults 16 x 16 - student on left
+Access     2: VA: 62493 (0xf41d) VPN:    0 VPO: 62493  TLB:1 PF:1 --> 0	      |	Access     2: VA: 62493 (0xf41d) VPN:    0 VPO: 62493  TLB:1 PF:0 --> 0
+Access     3: VA: 30198 (0x75f6) VPN:    0 VPO: 30198  TLB:1 PF:1 --> 29      |	Access     3: VA: 30198 (0x75f6) VPN:    0 VPO: 30198  TLB:1 PF:0 --> 29
+Access     4: VA: 53683 (0xd1b3) VPN:    0 VPO: 53683  TLB:1 PF:1 --> 108     |	Access     4: VA: 53683 (0xd1b3) VPN:    0 VPO: 53683  TLB:1 PF:0 --> 108
+Access     5: VA: 40185 (0x9cf9) VPN:    0 VPO: 40185  TLB:1 PF:1 --> 0	      |	Access     5: VA: 40185 (0x9cf9) VPN:    0 VPO: 40185  TLB:1 PF:0 --> 0
+Access     6: VA: 28781 (0x706d) VPN:    0 VPO: 28781  TLB:1 PF:1 --> 0	      |	Access     6: VA: 28781 (0x706d) VPN:    0 VPO: 28781  TLB:1 PF:0 --> 0
+Access     7: VA: 24462 (0x5f8e) VPN:    0 VPO: 24462  TLB:1 PF:1 --> 23      |	Access     7: VA: 24462 (0x5f8e) VPN:    0 VPO: 24462  TLB:1 PF:0 --> 23
+Access     8: VA: 48399 (0xbd0f) VPN:    0 VPO: 48399  TLB:1 PF:1 --> 67      |	Access     8: VA: 48399 (0xbd0f) VPN:    0 VPO: 48399  TLB:1 PF:0 --> 67
+Access     9: VA: 64815 (0xfd2f) VPN:    0 VPO: 64815  TLB:1 PF:1 --> 75      |	Access     9: VA: 64815 (0xfd2f) VPN:    0 VPO: 64815  TLB:1 PF:0 --> 75
+Access    10: VA: 18295 (0x4777) VPN:    0 VPO: 18295  TLB:1 PF:1 --> -35     |	Access    10: VA: 18295 (0x4777) VPN:    0 VPO: 18295  TLB:1 PF:0 --> -35
+Access    11: VA: 12218 (0x2fba) VPN:    0 VPO: 12218  TLB:1 PF:1 --> 11      |	Access    11: VA: 12218 (0x2fba) VPN:    0 VPO: 12218  TLB:1 PF:0 --> 11
+Access    12: VA: 22760 (0x58e8) VPN:    0 VPO: 22760  TLB:1 PF:1 --> 0	      |	Access    12: VA: 22760 (0x58e8) VPN:    0 VPO: 22760  TLB:1 PF:0 --> 0
+Access    13: VA: 57982 (0xe27e) VPN:    0 VPO: 57982  TLB:1 PF:1 --> 56      |	Access    13: VA: 57982 (0xe27e) VPN:    0 VPO: 57982  TLB:1 PF:0 --> 56
+Access    14: VA: 27966 (0x6d3e) VPN:    0 VPO: 27966  TLB:1 PF:1 --> 27      |	Access    14: VA: 27966 (0x6d3e) VPN:    0 VPO: 27966  TLB:1 PF:0 --> 27
+Access    15: VA: 54894 (0xd66e) VPN:    0 VPO: 54894  TLB:1 PF:1 --> 53      |	Access    15: VA: 54894 (0xd66e) VPN:    0 VPO: 54894  TLB:1 PF:0 --> 53
+Access    16: VA: 38929 (0x9811) VPN:    0 VPO: 38929  TLB:1 PF:1 --> 0	      |	Access    16: VA: 38929 (0x9811) VPN:    0 VPO: 38929  TLB:1 PF:0 --> 0
+Access    17: VA: 32865 (0x8061) VPN:    0 VPO: 32865  TLB:1 PF:1 --> 0	      |	Access    17: VA: 32865 (0x8061) VPN:    0 VPO: 32865  TLB:1 PF:0 --> 0
+Access    18: VA: 64243 (0xfaf3) VPN:    0 VPO: 64243  TLB:1 PF:1 --> -68     |	Access    18: VA: 64243 (0xfaf3) VPN:    0 VPO: 64243  TLB:1 PF:0 --> -68
+Access    19: VA:  2315 (0x090b) VPN:    0 VPO: 2315  TLB:1 PF:1 --> 66	      |	Access    19: VA:  2315 (0x090b) VPN:    0 VPO:  2315  TLB:1 PF:0 --> 66
+Access    20: VA: 64454 (0xfbc6) VPN:    0 VPO: 64454  TLB:1 PF:1 --> 62      |	Access    20: VA: 64454 (0xfbc6) VPN:    0 VPO: 64454  TLB:1 PF:0 --> 62
+Access    21: VA: 55041 (0xd701) VPN:    0 VPO: 55041  TLB:1 PF:1 --> 0	      |	Access    21: VA: 55041 (0xd701) VPN:    0 VPO: 55041  TLB:1 PF:0 --> 0
+...
+Access   981: VA: 37606 (0x92e6) VPN:    0 VPO: 37606  TLB:1 PF:1 --> 36      |	Access   981: VA: 37606 (0x92e6) VPN:    0 VPO: 37606  TLB:1 PF:0 --> 36
+Access   982: VA: 18426 (0x47fa) VPN:    0 VPO: 18426  TLB:1 PF:1 --> 17      |	Access   982: VA: 18426 (0x47fa) VPN:    0 VPO: 18426  TLB:1 PF:0 --> 17
+Access   983: VA: 21238 (0x52f6) VPN:    0 VPO: 21238  TLB:1 PF:1 --> 20      |	Access   983: VA: 21238 (0x52f6) VPN:    0 VPO: 21238  TLB:1 PF:0 --> 20
+Access   984: VA: 11983 (0x2ecf) VPN:    0 VPO: 11983  TLB:1 PF:1 --> -77     |	Access   984: VA: 11983 (0x2ecf) VPN:    0 VPO: 11983  TLB:1 PF:0 --> -77
+Access   985: VA: 48394 (0xbd0a) VPN:    0 VPO: 48394  TLB:1 PF:1 --> 47      |	Access   985: VA: 48394 (0xbd0a) VPN:    0 VPO: 48394  TLB:1 PF:0 --> 47
+Access   986: VA: 11036 (0x2b1c) VPN:    0 VPO: 11036  TLB:1 PF:1 --> 0	      |	Access   986: VA: 11036 (0x2b1c) VPN:    0 VPO: 11036  TLB:1 PF:0 --> 0
+Access   987: VA: 30557 (0x775d) VPN:    0 VPO: 30557  TLB:1 PF:1 --> 0	      |	Access   987: VA: 30557 (0x775d) VPN:    0 VPO: 30557  TLB:1 PF:0 --> 0
+Access   988: VA: 23453 (0x5b9d) VPN:    0 VPO: 23453  TLB:1 PF:1 --> 0	      |	Access   988: VA: 23453 (0x5b9d) VPN:    0 VPO: 23453  TLB:1 PF:0 --> 0
+Access   989: VA: 49847 (0xc2b7) VPN:    0 VPO: 49847  TLB:1 PF:1 --> -83     |	Access   989: VA: 49847 (0xc2b7) VPN:    0 VPO: 49847  TLB:1 PF:0 --> -83
+Access   990: VA: 30032 (0x7550) VPN:    0 VPO: 30032  TLB:1 PF:1 --> 0	      |	Access   990: VA: 30032 (0x7550) VPN:    0 VPO: 30032  TLB:1 PF:0 --> 0
+Access   991: VA: 48065 (0xbbc1) VPN:    0 VPO: 48065  TLB:1 PF:1 --> 0	      |	Access   991: VA: 48065 (0xbbc1) VPN:    0 VPO: 48065  TLB:1 PF:0 --> 0
+Access   992: VA:  6957 (0x1b2d) VPN:    0 VPO: 6957  TLB:1 PF:1 --> 0	      |	Access   992: VA:  6957 (0x1b2d) VPN:    0 VPO:  6957  TLB:1 PF:0 --> 0
+Access   993: VA:  2301 (0x08fd) VPN:    0 VPO: 2301  TLB:1 PF:1 --> 0	      |	Access   993: VA:  2301 (0x08fd) VPN:    0 VPO:  2301  TLB:1 PF:0 --> 0
+Access   994: VA:  7736 (0x1e38) VPN:    0 VPO: 7736  TLB:1 PF:1 --> 0	      |	Access   994: VA:  7736 (0x1e38) VPN:    0 VPO:  7736  TLB:1 PF:0 --> 0
+Access   995: VA: 31260 (0x7a1c) VPN:    0 VPO: 31260  TLB:1 PF:1 --> 0	      |	Access   995: VA: 31260 (0x7a1c) VPN:    0 VPO: 31260  TLB:1 PF:0 --> 0
+Access   996: VA: 17071 (0x42af) VPN:    0 VPO: 17071  TLB:1 PF:1 --> -85     |	Access   996: VA: 17071 (0x42af) VPN:    0 VPO: 17071  TLB:1 PF:0 --> -85
+Access   997: VA:  8940 (0x22ec) VPN:    0 VPO: 8940  TLB:1 PF:1 --> 0	      |	Access   997: VA:  8940 (0x22ec) VPN:    0 VPO:  8940  TLB:1 PF:0 --> 0
+Access   998: VA:  9929 (0x26c9) VPN:    0 VPO: 9929  TLB:1 PF:1 --> 0	      |	Access   998: VA:  9929 (0x26c9) VPN:    0 VPO:  9929  TLB:1 PF:0 --> 0
+Access   999: VA: 45563 (0xb1fb) VPN:    0 VPO: 45563  TLB:1 PF:1 --> 126     |	Access   999: VA: 45563 (0xb1fb) VPN:    0 VPO: 45563  TLB:1 PF:0 --> 126
+Access  1000: VA: 12107 (0x2f4b) VPN:    0 VPO: 12107  TLB:1 PF:1 --> -46     |	Access  1000: VA: 12107 (0x2f4b) VPN:    0 VPO: 12107  TLB:1 PF:0 --> -46
+@@@ End Checking faults 16 16
+Access   997: VA:  8940 (0x22ec) VPN:    0 VPO: 8940 ppn:    0 ppa: 8940 (22ec) TLB:1 PF:1 --> 0
+Access   998: VA:  9929 (0x26c9) VPN:    0 VPO: 9929 ppn:    0 ppa: 9929 (26c9) TLB:1 PF:1 --> 0
+Access   999: VA: 45563 (0xb1fb) VPN:    0 VPO: 45563 ppn:    0 ppa: 45563 (b1fb) TLB:1 PF:1 --> 126
+Access  1000: VA: 12107 (0x2f4b) VPN:    0 VPO: 12107 ppn:    0 ppa: 12107 (2f4b) TLB:1 PF:1 --> -46
+
+Elapsed time:  1000
+TLB misses:       1
+Page faults:      1
+TLB hit rate:    0.999
+Page fault rate: 0.001
+
+----------------------------------------------------------------
+Physical memory 16 page 15
+0.004u 0.000s 0:00.00 0.0%	0+0k 0+200io 0pf+0w
+Job exited with status 0
+*** Start checking values 16 x 15, student on left
+Files a16_p15_values.ans and ../../ANS/bookJustValues.txt are identical
+...
+Files a16_p15_values.ans and ../../ANS/bookJustValues.txt are identical
+*** End checking values 16 x 15
+
+@@@ Start checking faults 16 x 15 - student on left
+Access     3: VA: 30198 (0x75f6) VPN:    0 VPO: 30198  TLB:0 PF:1 --> 29      |	Access     3: VA: 30198 (0x75f6) VPN:    0 VPO: 30198  TLB:1 PF:0 --> 29
+Access     4: VA: 53683 (0xd1b3) VPN:    1 VPO: 20915  TLB:0 PF:0 --> 108     |	Access     4: VA: 53683 (0xd1b3) VPN:    1 VPO: 20915  TLB:1 PF:0 --> 108
+Access     6: VA: 28781 (0x706d) VPN:    0 VPO: 28781  TLB:0 PF:0 --> 0	      |	Access     6: VA: 28781 (0x706d) VPN:    0 VPO: 28781  TLB:1 PF:0 --> 0
+Access     8: VA: 48399 (0xbd0f) VPN:    1 VPO: 15631  TLB:0 PF:0 --> 67      |	Access     8: VA: 48399 (0xbd0f) VPN:    1 VPO: 15631  TLB:1 PF:0 --> 67
+Access    10: VA: 18295 (0x4777) VPN:    0 VPO: 18295  TLB:0 PF:0 --> -35     |	Access    10: VA: 18295 (0x4777) VPN:    0 VPO: 18295  TLB:1 PF:0 --> -35
+Access    13: VA: 57982 (0xe27e) VPN:    1 VPO: 25214  TLB:0 PF:0 --> 56      |	Access    13: VA: 57982 (0xe27e) VPN:    1 VPO: 25214  TLB:1 PF:0 --> 56
+Access    14: VA: 27966 (0x6d3e) VPN:    0 VPO: 27966  TLB:0 PF:0 --> 27      |	Access    14: VA: 27966 (0x6d3e) VPN:    0 VPO: 27966  TLB:1 PF:0 --> 27
+Access    15: VA: 54894 (0xd66e) VPN:    1 VPO: 22126  TLB:0 PF:0 --> 53      |	Access    15: VA: 54894 (0xd66e) VPN:    1 VPO: 22126  TLB:1 PF:0 --> 53
+Access    19: VA:  2315 (0x090b) VPN:    0 VPO: 2315  TLB:0 PF:0 --> 66	      |	Access    19: VA:  2315 (0x090b) VPN:    0 VPO:  2315  TLB:1 PF:0 --> 66
+Access    20: VA: 64454 (0xfbc6) VPN:    1 VPO: 31686  TLB:0 PF:0 --> 62      |	Access    20: VA: 64454 (0xfbc6) VPN:    1 VPO: 31686  TLB:1 PF:0 --> 62
+Access    22: VA: 18633 (0x48c9) VPN:    0 VPO: 18633  TLB:0 PF:0 --> 0	      |	Access    22: VA: 18633 (0x48c9) VPN:    0 VPO: 18633  TLB:1 PF:0 --> 0
+Access    24: VA: 61006 (0xee4e) VPN:    1 VPO: 28238  TLB:0 PF:0 --> 59      |	Access    24: VA: 61006 (0xee4e) VPN:    1 VPO: 28238  TLB:1 PF:0 --> 59
+Access    26: VA:  7591 (0x1da7) VPN:    0 VPO: 7591  TLB:0 PF:0 --> 105      |	Access    26: VA:  7591 (0x1da7) VPN:    0 VPO:  7591  TLB:1 PF:0 --> 105
+Access    27: VA: 64747 (0xfceb) VPN:    1 VPO: 31979  TLB:0 PF:0 --> 58      |	Access    27: VA: 64747 (0xfceb) VPN:    1 VPO: 31979  TLB:1 PF:0 --> 58
+Access    28: VA:  6727 (0x1a47) VPN:    0 VPO: 6727  TLB:0 PF:0 --> -111     |	Access    28: VA:  6727 (0x1a47) VPN:    0 VPO:  6727  TLB:1 PF:0 --> -111
+Access    30: VA: 60645 (0xece5) VPN:    1 VPO: 27877  TLB:0 PF:0 --> 0	      |	Access    30: VA: 60645 (0xece5) VPN:    1 VPO: 27877  TLB:1 PF:0 --> 0
+Access    31: VA:  6308 (0x18a4) VPN:    0 VPO: 6308  TLB:0 PF:0 --> 0	      |	Access    31: VA:  6308 (0x18a4) VPN:    0 VPO:  6308  TLB:1 PF:0 --> 0
+Access    32: VA: 45688 (0xb278) VPN:    1 VPO: 12920  TLB:0 PF:0 --> 0	      |	Access    32: VA: 45688 (0xb278) VPN:    1 VPO: 12920  TLB:1 PF:0 --> 0
+Access    33: VA:   969 (0x03c9) VPN:    0 VPO:  969  TLB:0 PF:0 --> 0	      |	Access    33: VA:   969 (0x03c9) VPN:    0 VPO:   969  TLB:1 PF:0 --> 0
+Access    34: VA: 40891 (0x9fbb) VPN:    1 VPO: 8123  TLB:0 PF:0 --> -18      |	Access    34: VA: 40891 (0x9fbb) VPN:    1 VPO:  8123  TLB:1 PF:0 --> -18
+...
+Access   959: VA: 43046 (0xa826) VPN:    1 VPO: 10278  TLB:0 PF:0 --> 42      |	Access   959: VA: 43046 (0xa826) VPN:    1 VPO: 10278  TLB:1 PF:0 --> 42
+Access   961: VA:  9237 (0x2415) VPN:    0 VPO: 9237  TLB:0 PF:0 --> 0	      |	Access   961: VA:  9237 (0x2415) VPN:    0 VPO:  9237  TLB:1 PF:0 --> 0
+Access   962: VA: 47706 (0xba5a) VPN:    1 VPO: 14938  TLB:0 PF:0 --> 46      |	Access   962: VA: 47706 (0xba5a) VPN:    1 VPO: 14938  TLB:1 PF:0 --> 46
+Access   965: VA: 27460 (0x6b44) VPN:    0 VPO: 27460  TLB:0 PF:0 --> 0	      |	Access   965: VA: 27460 (0x6b44) VPN:    0 VPO: 27460  TLB:1 PF:0 --> 0
+Access   967: VA: 51933 (0xcadd) VPN:    1 VPO: 19165  TLB:0 PF:0 --> 0	      |	Access   967: VA: 51933 (0xcadd) VPN:    1 VPO: 19165  TLB:1 PF:0 --> 0
+Access   971: VA:  9277 (0x243d) VPN:    0 VPO: 9277  TLB:0 PF:0 --> 0	      |	Access   971: VA:  9277 (0x243d) VPN:    0 VPO:  9277  TLB:1 PF:0 --> 0
+Access   973: VA: 44860 (0xaf3c) VPN:    1 VPO: 12092  TLB:0 PF:0 --> 0	      |	Access   973: VA: 44860 (0xaf3c) VPN:    1 VPO: 12092  TLB:1 PF:0 --> 0
+Access   975: VA: 10583 (0x2957) VPN:    0 VPO: 10583  TLB:0 PF:0 --> 85      |	Access   975: VA: 10583 (0x2957) VPN:    0 VPO: 10583  TLB:1 PF:0 --> 85
+Access   976: VA: 57751 (0xe197) VPN:    1 VPO: 24983  TLB:0 PF:0 --> 101     |	Access   976: VA: 57751 (0xe197) VPN:    1 VPO: 24983  TLB:1 PF:0 --> 101
+Access   977: VA: 23195 (0x5a9b) VPN:    0 VPO: 23195  TLB:0 PF:0 --> -90     |	Access   977: VA: 23195 (0x5a9b) VPN:    0 VPO: 23195  TLB:1 PF:0 --> -90
+Access   979: VA: 42816 (0xa740) VPN:    1 VPO: 10048  TLB:0 PF:0 --> 0	      |	Access   979: VA: 42816 (0xa740) VPN:    1 VPO: 10048  TLB:1 PF:0 --> 0
+Access   982: VA: 18426 (0x47fa) VPN:    0 VPO: 18426  TLB:0 PF:0 --> 17      |	Access   982: VA: 18426 (0x47fa) VPN:    0 VPO: 18426  TLB:1 PF:0 --> 17
+Access   985: VA: 48394 (0xbd0a) VPN:    1 VPO: 15626  TLB:0 PF:0 --> 47      |	Access   985: VA: 48394 (0xbd0a) VPN:    1 VPO: 15626  TLB:1 PF:0 --> 47
+Access   986: VA: 11036 (0x2b1c) VPN:    0 VPO: 11036  TLB:0 PF:0 --> 0	      |	Access   986: VA: 11036 (0x2b1c) VPN:    0 VPO: 11036  TLB:1 PF:0 --> 0
+Access   989: VA: 49847 (0xc2b7) VPN:    1 VPO: 17079  TLB:0 PF:0 --> -83     |	Access   989: VA: 49847 (0xc2b7) VPN:    1 VPO: 17079  TLB:1 PF:0 --> -83
+Access   990: VA: 30032 (0x7550) VPN:    0 VPO: 30032  TLB:0 PF:0 --> 0	      |	Access   990: VA: 30032 (0x7550) VPN:    0 VPO: 30032  TLB:1 PF:0 --> 0
+Access   991: VA: 48065 (0xbbc1) VPN:    1 VPO: 15297  TLB:0 PF:0 --> 0	      |	Access   991: VA: 48065 (0xbbc1) VPN:    1 VPO: 15297  TLB:1 PF:0 --> 0
+Access   992: VA:  6957 (0x1b2d) VPN:    0 VPO: 6957  TLB:0 PF:0 --> 0	      |	Access   992: VA:  6957 (0x1b2d) VPN:    0 VPO:  6957  TLB:1 PF:0 --> 0
+Access   999: VA: 45563 (0xb1fb) VPN:    1 VPO: 12795  TLB:0 PF:0 --> 126     |	Access   999: VA: 45563 (0xb1fb) VPN:    1 VPO: 12795  TLB:1 PF:0 --> 126
+Access  1000: VA: 12107 (0x2f4b) VPN:    0 VPO: 12107  TLB:0 PF:0 --> -46     |	Access  1000: VA: 12107 (0x2f4b) VPN:    0 VPO: 12107  TLB:1 PF:0 --> -46
+@@@ End Checking faults 16 15
+Access   997: VA:  8940 (0x22ec) VPN:    0 VPO: 8940 ppn:    2 ppa: 74476 (122ec) TLB:1 PF:0 --> 0
+Access   998: VA:  9929 (0x26c9) VPN:    0 VPO: 9929 ppn:    2 ppa: 75465 (126c9) TLB:1 PF:0 --> 0
+Access   999: VA: 45563 (0xb1fb) VPN:    1 VPO: 12795 ppn:    1 ppa: 45563 (b1fb) TLB:0 PF:0 --> 126
+Access  1000: VA: 12107 (0x2f4b) VPN:    0 VPO: 12107 ppn:    2 ppa: 77643 (12f4b) TLB:0 PF:0 --> -46
+
+Elapsed time:  1000
+TLB misses:     505
+Page faults:      3
+TLB hit rate:    0.495
+Page fault rate: 0.003
+
+----------------------------------------------------------------
+Physical memory 15 page 15
+0.000u 0.008s 0:00.01 0.0%	0+0k 0+200io 0pf+0w
+Job exited with status 0
+*** Start checking values 15 x 15, student on left
+Files a15_p15_values.ans and ../../ANS/bookJustValues.txt are identical
+...
+Files a15_p15_values.ans and ../../ANS/bookJustValues.txt are identical
+*** End checking values 15 x 15
+
+@@@ Start checking faults 15 x 15 - student on left
+Access     4: VA: 53683 (0xd1b3) VPN:    1 VPO: 20915  TLB:0 PF:0 --> 108     |	Access     4: VA: 53683 (0xd1b3) VPN:    1 VPO: 20915  TLB:0 PF:1 --> 108
+Access     7: VA: 24462 (0x5f8e) VPN:    0 VPO: 24462  TLB:1 PF:1 --> 23      |	Access     7: VA: 24462 (0x5f8e) VPN:    0 VPO: 24462  TLB:1 PF:0 --> 23
+Access     9: VA: 64815 (0xfd2f) VPN:    1 VPO: 32047  TLB:1 PF:1 --> 75      |	Access     9: VA: 64815 (0xfd2f) VPN:    1 VPO: 32047  TLB:1 PF:0 --> 75
+Access    11: VA: 12218 (0x2fba) VPN:    0 VPO: 12218  TLB:1 PF:1 --> 11      |	Access    11: VA: 12218 (0x2fba) VPN:    0 VPO: 12218  TLB:1 PF:0 --> 11
+Access    12: VA: 22760 (0x58e8) VPN:    0 VPO: 22760  TLB:1 PF:1 --> 0	      |	Access    12: VA: 22760 (0x58e8) VPN:    0 VPO: 22760  TLB:1 PF:0 --> 0
+Access    16: VA: 38929 (0x9811) VPN:    1 VPO: 6161  TLB:1 PF:1 --> 0	      |	Access    16: VA: 38929 (0x9811) VPN:    1 VPO:  6161  TLB:1 PF:0 --> 0
+Access    17: VA: 32865 (0x8061) VPN:    1 VPO:   97  TLB:1 PF:1 --> 0	      |	Access    17: VA: 32865 (0x8061) VPN:    1 VPO:    97  TLB:1 PF:0 --> 0
+Access    18: VA: 64243 (0xfaf3) VPN:    1 VPO: 31475  TLB:1 PF:1 --> -68     |	Access    18: VA: 64243 (0xfaf3) VPN:    1 VPO: 31475  TLB:1 PF:0 --> -68
+Access    21: VA: 55041 (0xd701) VPN:    1 VPO: 22273  TLB:1 PF:1 --> 0	      |	Access    21: VA: 55041 (0xd701) VPN:    1 VPO: 22273  TLB:1 PF:0 --> 0
+Access    23: VA: 14557 (0x38dd) VPN:    0 VPO: 14557  TLB:1 PF:1 --> 0	      |	Access    23: VA: 14557 (0x38dd) VPN:    0 VPO: 14557  TLB:1 PF:0 --> 0
+Access    25: VA: 62615 (0xf497) VPN:    1 VPO: 29847  TLB:1 PF:1 --> 37      |	Access    25: VA: 62615 (0xf497) VPN:    1 VPO: 29847  TLB:1 PF:0 --> 37
+Access    29: VA: 32315 (0x7e3b) VPN:    0 VPO: 32315  TLB:1 PF:1 --> -114    |	Access    29: VA: 32315 (0x7e3b) VPN:    0 VPO: 32315  TLB:1 PF:0 --> -114
+Access    35: VA: 49294 (0xc08e) VPN:    1 VPO: 16526  TLB:1 PF:1 --> 48      |	Access    35: VA: 49294 (0xc08e) VPN:    1 VPO: 16526  TLB:1 PF:0 --> 48
+Access    36: VA: 41118 (0xa09e) VPN:    1 VPO: 8350  TLB:1 PF:1 --> 40	      |	Access    36: VA: 41118 (0xa09e) VPN:    1 VPO:  8350  TLB:1 PF:0 --> 40
+Access    38: VA:  6091 (0x17cb) VPN:    0 VPO: 6091  TLB:1 PF:1 --> -14      |	Access    38: VA:  6091 (0x17cb) VPN:    0 VPO:  6091  TLB:1 PF:0 --> -14
+Access    39: VA: 32541 (0x7f1d) VPN:    0 VPO: 32541  TLB:1 PF:1 --> 0	      |	Access    39: VA: 32541 (0x7f1d) VPN:    0 VPO: 32541  TLB:1 PF:0 --> 0
+Access    40: VA: 17665 (0x4501) VPN:    0 VPO: 17665  TLB:1 PF:1 --> 0	      |	Access    40: VA: 17665 (0x4501) VPN:    0 VPO: 17665  TLB:1 PF:0 --> 0
+Access    41: VA:  3784 (0x0ec8) VPN:    0 VPO: 3784  TLB:1 PF:1 --> 0	      |	Access    41: VA:  3784 (0x0ec8) VPN:    0 VPO:  3784  TLB:1 PF:0 --> 0
+Access    42: VA: 28718 (0x702e) VPN:    0 VPO: 28718  TLB:1 PF:1 --> 28      |	Access    42: VA: 28718 (0x702e) VPN:    0 VPO: 28718  TLB:1 PF:0 --> 28
+Access    44: VA: 40178 (0x9cf2) VPN:    1 VPO: 7410  TLB:1 PF:1 --> 39	      |	Access    44: VA: 40178 (0x9cf2) VPN:    1 VPO:  7410  TLB:1 PF:0 --> 39
+...
+Access   964: VA: 42008 (0xa418) VPN:    1 VPO: 9240  TLB:1 PF:1 --> 0	      |	Access   964: VA: 42008 (0xa418) VPN:    1 VPO:  9240  TLB:1 PF:0 --> 0
+Access   966: VA: 24999 (0x61a7) VPN:    0 VPO: 24999  TLB:1 PF:1 --> 105     |	Access   966: VA: 24999 (0x61a7) VPN:    0 VPO: 24999  TLB:1 PF:0 --> 105
+Access   968: VA: 34070 (0x8516) VPN:    1 VPO: 1302  TLB:1 PF:1 --> 33	      |	Access   968: VA: 34070 (0x8516) VPN:    1 VPO:  1302  TLB:1 PF:0 --> 33
+Access   969: VA: 65155 (0xfe83) VPN:    1 VPO: 32387  TLB:1 PF:1 --> -96     |	Access   969: VA: 65155 (0xfe83) VPN:    1 VPO: 32387  TLB:1 PF:0 --> -96
+Access   970: VA: 59955 (0xea33) VPN:    1 VPO: 27187  TLB:1 PF:1 --> -116    |	Access   970: VA: 59955 (0xea33) VPN:    1 VPO: 27187  TLB:1 PF:0 --> -116
+Access   972: VA: 20420 (0x4fc4) VPN:    0 VPO: 20420  TLB:1 PF:1 --> 0	      |	Access   972: VA: 20420 (0x4fc4) VPN:    0 VPO: 20420  TLB:1 PF:0 --> 0
+Access   974: VA: 50992 (0xc730) VPN:    1 VPO: 18224  TLB:1 PF:1 --> 0	      |	Access   974: VA: 50992 (0xc730) VPN:    1 VPO: 18224  TLB:1 PF:0 --> 0
+Access   978: VA: 27227 (0x6a5b) VPN:    0 VPO: 27227  TLB:1 PF:1 --> -106    |	Access   978: VA: 27227 (0x6a5b) VPN:    0 VPO: 27227  TLB:1 PF:0 --> -106
+Access   980: VA: 58219 (0xe36b) VPN:    1 VPO: 25451  TLB:1 PF:1 --> -38     |	Access   980: VA: 58219 (0xe36b) VPN:    1 VPO: 25451  TLB:1 PF:0 --> -38
+Access   981: VA: 37606 (0x92e6) VPN:    1 VPO: 4838  TLB:1 PF:1 --> 36	      |	Access   981: VA: 37606 (0x92e6) VPN:    1 VPO:  4838  TLB:1 PF:0 --> 36
+Access   983: VA: 21238 (0x52f6) VPN:    0 VPO: 21238  TLB:1 PF:1 --> 20      |	Access   983: VA: 21238 (0x52f6) VPN:    0 VPO: 21238  TLB:1 PF:0 --> 20
+Access   984: VA: 11983 (0x2ecf) VPN:    0 VPO: 11983  TLB:1 PF:1 --> -77     |	Access   984: VA: 11983 (0x2ecf) VPN:    0 VPO: 11983  TLB:1 PF:0 --> -77
+Access   987: VA: 30557 (0x775d) VPN:    0 VPO: 30557  TLB:1 PF:1 --> 0	      |	Access   987: VA: 30557 (0x775d) VPN:    0 VPO: 30557  TLB:1 PF:0 --> 0
+Access   988: VA: 23453 (0x5b9d) VPN:    0 VPO: 23453  TLB:1 PF:1 --> 0	      |	Access   988: VA: 23453 (0x5b9d) VPN:    0 VPO: 23453  TLB:1 PF:0 --> 0
+Access   993: VA:  2301 (0x08fd) VPN:    0 VPO: 2301  TLB:1 PF:1 --> 0	      |	Access   993: VA:  2301 (0x08fd) VPN:    0 VPO:  2301  TLB:1 PF:0 --> 0
+Access   994: VA:  7736 (0x1e38) VPN:    0 VPO: 7736  TLB:1 PF:1 --> 0	      |	Access   994: VA:  7736 (0x1e38) VPN:    0 VPO:  7736  TLB:1 PF:0 --> 0
+Access   995: VA: 31260 (0x7a1c) VPN:    0 VPO: 31260  TLB:1 PF:1 --> 0	      |	Access   995: VA: 31260 (0x7a1c) VPN:    0 VPO: 31260  TLB:1 PF:0 --> 0
+Access   996: VA: 17071 (0x42af) VPN:    0 VPO: 17071  TLB:1 PF:1 --> -85     |	Access   996: VA: 17071 (0x42af) VPN:    0 VPO: 17071  TLB:1 PF:0 --> -85
+Access   997: VA:  8940 (0x22ec) VPN:    0 VPO: 8940  TLB:1 PF:1 --> 0	      |	Access   997: VA:  8940 (0x22ec) VPN:    0 VPO:  8940  TLB:1 PF:0 --> 0
+Access   998: VA:  9929 (0x26c9) VPN:    0 VPO: 9929  TLB:1 PF:1 --> 0	      |	Access   998: VA:  9929 (0x26c9) VPN:    0 VPO:  9929  TLB:1 PF:0 --> 0
+@@@ End Checking faults 15 15
+Access   997: VA:  8940 (0x22ec) VPN:    0 VPO: 8940 ppn:    1 ppa: 41708 (a2ec) TLB:1 PF:1 --> 0
+Access   998: VA:  9929 (0x26c9) VPN:    0 VPO: 9929 ppn:    1 ppa: 42697 (a6c9) TLB:1 PF:1 --> 0
+Access   999: VA: 45563 (0xb1fb) VPN:    1 VPO: 12795 ppn:    1 ppa: 45563 (b1fb) TLB:0 PF:1 --> 126
+Access  1000: VA: 12107 (0x2f4b) VPN:    0 VPO: 12107 ppn:    1 ppa: 44875 (af4b) TLB:0 PF:1 --> -46
+
+Elapsed time:  1000
+TLB misses:     505
+Page faults:    504
+TLB hit rate:    0.495
+Page fault rate: 0.504
+
+----------------------------------------------------------------
+Physical memory 16 page 8
+0.004u 0.000s 0:00.01 0.0%	0+0k 0+200io 0pf+0w
+Job exited with status 0
+*** Start checking values 16 x 8, student on left
+Files a16_p8_values.ans and ../../ANS/bookJustValues.txt are identical
+...
+Files a16_p8_values.ans and ../../ANS/bookJustValues.txt are identical
+*** End checking values 16 x 8
+
+@@@ Start checking faults 16 x 8 - student on left
+Access    65: VA: 58584 (0xe4d8) VPN:  228 VPO:  216  TLB:1 PF:1 --> 0	      |	Access    65: VA: 58584 (0xe4d8) VPN:  228 VPO:   216  TLB:1 PF:0 --> 0
+Access    67: VA: 58982 (0xe666) VPN:  230 VPO:  102  TLB:0 PF:0 --> 57	      |	Access    67: VA: 58982 (0xe666) VPN:  230 VPO:   102  TLB:1 PF:0 --> 57
+Access    77: VA: 36374 (0x8e16) VPN:  142 VPO:   22  TLB:0 PF:0 --> 35	      |	Access    77: VA: 36374 (0x8e16) VPN:  142 VPO:    22  TLB:1 PF:0 --> 35
+Access   106: VA: 64390 (0xfb86) VPN:  251 VPO:  134  TLB:0 PF:0 --> 62	      |	Access   106: VA: 64390 (0xfb86) VPN:  251 VPO:   134  TLB:1 PF:0 --> 62
+Access   138: VA: 59516 (0xe87c) VPN:  232 VPO:  124  TLB:0 PF:0 --> 0	      |	Access   138: VA: 59516 (0xe87c) VPN:  232 VPO:   124  TLB:1 PF:0 --> 0
+Access   151: VA: 62971 (0xf5fb) VPN:  245 VPO:  251  TLB:0 PF:0 --> 126      |	Access   151: VA: 62971 (0xf5fb) VPN:  245 VPO:   251  TLB:1 PF:0 --> 126
+Access   158: VA: 62869 (0xf595) VPN:  245 VPO:  149  TLB:0 PF:0 --> 0	      |	Access   158: VA: 62869 (0xf595) VPN:  245 VPO:   149  TLB:1 PF:0 --> 0
+Access   162: VA: 32956 (0x80bc) VPN:  128 VPO:  188  TLB:0 PF:0 --> 0	      |	Access   162: VA: 32956 (0x80bc) VPN:  128 VPO:   188  TLB:1 PF:0 --> 0
+Access   169: VA: 34621 (0x873d) VPN:  135 VPO:   61  TLB:0 PF:0 --> 0	      |	Access   169: VA: 34621 (0x873d) VPN:  135 VPO:    61  TLB:1 PF:0 --> 0
+Access   171: VA: 32820 (0x8034) VPN:  128 VPO:   52  TLB:0 PF:0 --> 0	      |	Access   171: VA: 32820 (0x8034) VPN:  128 VPO:    52  TLB:1 PF:0 --> 0
+Access   177: VA: 13853 (0x361d) VPN:   54 VPO:   29  TLB:0 PF:0 --> 0	      |	Access   177: VA: 13853 (0x361d) VPN:   54 VPO:    29  TLB:1 PF:0 --> 0
+Access   179: VA: 15216 (0x3b70) VPN:   59 VPO:  112  TLB:0 PF:0 --> 0	      |	Access   179: VA: 15216 (0x3b70) VPN:   59 VPO:   112  TLB:1 PF:0 --> 0
+Access   182: VA: 32978 (0x80d2) VPN:  128 VPO:  210  TLB:0 PF:0 --> 32	      |	Access   182: VA: 32978 (0x80d2) VPN:  128 VPO:   210  TLB:1 PF:0 --> 32
+Access   208: VA: 26021 (0x65a5) VPN:  101 VPO:  165  TLB:0 PF:0 --> 0	      |	Access   208: VA: 26021 (0x65a5) VPN:  101 VPO:   165  TLB:1 PF:0 --> 0
+Access   217: VA: 41452 (0xa1ec) VPN:  161 VPO:  236  TLB:0 PF:0 --> 0	      |	Access   217: VA: 41452 (0xa1ec) VPN:  161 VPO:   236  TLB:1 PF:0 --> 0
+Access   247: VA: 62799 (0xf54f) VPN:  245 VPO:   79  TLB:0 PF:0 --> 83	      |	Access   247: VA: 62799 (0xf54f) VPN:  245 VPO:    79  TLB:1 PF:0 --> 83
+Access   265: VA: 29780 (0x7454) VPN:  116 VPO:   84  TLB:0 PF:0 --> 0	      |	Access   265: VA: 29780 (0x7454) VPN:  116 VPO:    84  TLB:1 PF:0 --> 0
+Access   287: VA:  7477 (0x1d35) VPN:   29 VPO:   53  TLB:0 PF:0 --> 0	      |	Access   287: VA:  7477 (0x1d35) VPN:   29 VPO:    53  TLB:1 PF:0 --> 0
+Access   289: VA: 59546 (0xe89a) VPN:  232 VPO:  154  TLB:0 PF:0 --> 58	      |	Access   289: VA: 59546 (0xe89a) VPN:  232 VPO:   154  TLB:1 PF:0 --> 58
+Access   312: VA: 19602 (0x4c92) VPN:   76 VPO:  146  TLB:0 PF:0 --> 19	      |	Access   312: VA: 19602 (0x4c92) VPN:   76 VPO:   146  TLB:1 PF:0 --> 19
+...
+Access   654: VA:  2498 (0x09c2) VPN:    9 VPO:  194  TLB:0 PF:0 --> 2	      |	Access   654: VA:  2498 (0x09c2) VPN:    9 VPO:   194  TLB:1 PF:0 --> 2
+Access   670: VA: 13963 (0x368b) VPN:   54 VPO:  139  TLB:0 PF:0 --> -94      |	Access   670: VA: 13963 (0x368b) VPN:   54 VPO:   139  TLB:1 PF:0 --> -94
+Access   679: VA: 58944 (0xe640) VPN:  230 VPO:   64  TLB:0 PF:0 --> 0	      |	Access   679: VA: 58944 (0xe640) VPN:  230 VPO:    64  TLB:1 PF:0 --> 0
+Access   716: VA: 63250 (0xf712) VPN:  247 VPO:   18  TLB:0 PF:0 --> 61	      |	Access   716: VA: 63250 (0xf712) VPN:  247 VPO:    18  TLB:1 PF:0 --> 61
+Access   721: VA: 56438 (0xdc76) VPN:  220 VPO:  118  TLB:0 PF:0 --> 55	      |	Access   721: VA: 56438 (0xdc76) VPN:  220 VPO:   118  TLB:1 PF:0 --> 55
+Access   752: VA: 23075 (0x5a23) VPN:   90 VPO:   35  TLB:0 PF:0 --> -120     |	Access   752: VA: 23075 (0x5a23) VPN:   90 VPO:    35  TLB:1 PF:0 --> -120
+Access   763: VA:   813 (0x032d) VPN:    3 VPO:   45  TLB:0 PF:0 --> 0	      |	Access   763: VA:   813 (0x032d) VPN:    3 VPO:    45  TLB:1 PF:0 --> 0
+Access   764: VA: 19419 (0x4bdb) VPN:   75 VPO:  219  TLB:0 PF:0 --> -10      |	Access   764: VA: 19419 (0x4bdb) VPN:   75 VPO:   219  TLB:1 PF:0 --> -10
+Access   769: VA: 19289 (0x4b59) VPN:   75 VPO:   89  TLB:0 PF:0 --> 0	      |	Access   769: VA: 19289 (0x4b59) VPN:   75 VPO:    89  TLB:1 PF:0 --> 0
+Access   773: VA: 13611 (0x352b) VPN:   53 VPO:   43  TLB:0 PF:0 --> 74	      |	Access   773: VA: 13611 (0x352b) VPN:   53 VPO:    43  TLB:1 PF:0 --> 74
+Access   774: VA: 21514 (0x540a) VPN:   84 VPO:   10  TLB:0 PF:0 --> 21	      |	Access   774: VA: 21514 (0x540a) VPN:   84 VPO:    10  TLB:1 PF:0 --> 21
+Access   777: VA: 49013 (0xbf75) VPN:  191 VPO:  117  TLB:0 PF:0 --> 0	      |	Access   777: VA: 49013 (0xbf75) VPN:  191 VPO:   117  TLB:1 PF:0 --> 0
+Access   826: VA:  6552 (0x1998) VPN:   25 VPO:  152  TLB:0 PF:0 --> 0	      |	Access   826: VA:  6552 (0x1998) VPN:   25 VPO:   152  TLB:1 PF:0 --> 0
+Access   832: VA: 61431 (0xeff7) VPN:  239 VPO:  247  TLB:0 PF:0 --> -3	      |	Access   832: VA: 61431 (0xeff7) VPN:  239 VPO:   247  TLB:1 PF:0 --> -3
+Access   837: VA: 35229 (0x899d) VPN:  137 VPO:  157  TLB:0 PF:0 --> 0	      |	Access   837: VA: 35229 (0x899d) VPN:  137 VPO:   157  TLB:1 PF:0 --> 0
+Access   847: VA: 43051 (0xa82b) VPN:  168 VPO:   43  TLB:0 PF:0 --> 10	      |	Access   847: VA: 43051 (0xa82b) VPN:  168 VPO:    43  TLB:1 PF:0 --> 10
+Access   914: VA: 22345 (0x5749) VPN:   87 VPO:   73  TLB:0 PF:0 --> 0	      |	Access   914: VA: 22345 (0x5749) VPN:   87 VPO:    73  TLB:1 PF:0 --> 0
+Access   915: VA: 46463 (0xb57f) VPN:  181 VPO:  127  TLB:0 PF:0 --> 95	      |	Access   915: VA: 46463 (0xb57f) VPN:  181 VPO:   127  TLB:1 PF:0 --> 95
+Access   971: VA:  9277 (0x243d) VPN:   36 VPO:   61  TLB:0 PF:0 --> 0	      |	Access   971: VA:  9277 (0x243d) VPN:   36 VPO:    61  TLB:1 PF:0 --> 0
+Access   996: VA: 17071 (0x42af) VPN:   66 VPO:  175  TLB:0 PF:1 --> -85      |	Access   996: VA: 17071 (0x42af) VPN:   66 VPO:   175  TLB:0 PF:0 --> -85
+@@@ End Checking faults 16 8
+Access   997: VA:  8940 (0x22ec) VPN:   34 VPO:  236 ppn:  181 ppa: 46572 (b5ec) TLB:0 PF:0 --> 0
+Access   998: VA:  9929 (0x26c9) VPN:   38 VPO:  201 ppn:  174 ppa: 44745 (aec9) TLB:0 PF:0 --> 0
+Access   999: VA: 45563 (0xb1fb) VPN:  177 VPO:  251 ppn:  179 ppa: 46075 (b3fb) TLB:0 PF:0 --> 126
+Access  1000: VA: 12107 (0x2f4b) VPN:   47 VPO:   75 ppn:   10 ppa: 2635 (0a4b) TLB:0 PF:0 --> -46
+
+Elapsed time:  1000
+TLB misses:     998
+Page faults:    245
+TLB hit rate:    0.002
+Page fault rate: 0.245
+
+----------------------------------------------------------------
+Physical memory 15 page 8
+0.007u 0.000s 0:00.01 0.0%	0+0k 0+200io 0pf+0w
+Job exited with status 0
+*** Start checking values 15 x 8, student on left
+Files a15_p8_values.ans and ../../ANS/bookJustValues.txt are identical
+...
+Files a15_p8_values.ans and ../../ANS/bookJustValues.txt are identical
+*** End checking values 15 x 8
+
+@@@ Start checking faults 15 x 8 - student on left
+Access    65: VA: 58584 (0xe4d8) VPN:  228 VPO:  216  TLB:1 PF:1 --> 0	      |	Access    65: VA: 58584 (0xe4d8) VPN:  228 VPO:   216  TLB:1 PF:0 --> 0
+Access    67: VA: 58982 (0xe666) VPN:  230 VPO:  102  TLB:0 PF:0 --> 57	      |	Access    67: VA: 58982 (0xe666) VPN:  230 VPO:   102  TLB:1 PF:0 --> 57
+Access    77: VA: 36374 (0x8e16) VPN:  142 VPO:   22  TLB:0 PF:0 --> 35	      |	Access    77: VA: 36374 (0x8e16) VPN:  142 VPO:    22  TLB:1 PF:0 --> 35
+Access   106: VA: 64390 (0xfb86) VPN:  251 VPO:  134  TLB:0 PF:0 --> 62	      |	Access   106: VA: 64390 (0xfb86) VPN:  251 VPO:   134  TLB:1 PF:0 --> 62
+Access   138: VA: 59516 (0xe87c) VPN:  232 VPO:  124  TLB:0 PF:0 --> 0	      |	Access   138: VA: 59516 (0xe87c) VPN:  232 VPO:   124  TLB:1 PF:0 --> 0
+Access   151: VA: 62971 (0xf5fb) VPN:  245 VPO:  251  TLB:0 PF:0 --> 126      |	Access   151: VA: 62971 (0xf5fb) VPN:  245 VPO:   251  TLB:1 PF:0 --> 126
+Access   158: VA: 62869 (0xf595) VPN:  245 VPO:  149  TLB:0 PF:0 --> 0	      |	Access   158: VA: 62869 (0xf595) VPN:  245 VPO:   149  TLB:1 PF:0 --> 0
+Access   162: VA: 32956 (0x80bc) VPN:  128 VPO:  188  TLB:0 PF:0 --> 0	      |	Access   162: VA: 32956 (0x80bc) VPN:  128 VPO:   188  TLB:1 PF:0 --> 0
+Access   169: VA: 34621 (0x873d) VPN:  135 VPO:   61  TLB:0 PF:0 --> 0	      |	Access   169: VA: 34621 (0x873d) VPN:  135 VPO:    61  TLB:1 PF:0 --> 0
+Access   171: VA: 32820 (0x8034) VPN:  128 VPO:   52  TLB:0 PF:0 --> 0	      |	Access   171: VA: 32820 (0x8034) VPN:  128 VPO:    52  TLB:1 PF:0 --> 0
+Access   177: VA: 13853 (0x361d) VPN:   54 VPO:   29  TLB:0 PF:0 --> 0	      |	Access   177: VA: 13853 (0x361d) VPN:   54 VPO:    29  TLB:1 PF:0 --> 0
+Access   179: VA: 15216 (0x3b70) VPN:   59 VPO:  112  TLB:0 PF:0 --> 0	      |	Access   179: VA: 15216 (0x3b70) VPN:   59 VPO:   112  TLB:1 PF:0 --> 0
+Access   182: VA: 32978 (0x80d2) VPN:  128 VPO:  210  TLB:0 PF:0 --> 32	      |	Access   182: VA: 32978 (0x80d2) VPN:  128 VPO:   210  TLB:1 PF:0 --> 32
+Access   191: VA: 64181 (0xfab5) VPN:  250 VPO:  181  TLB:0 PF:0 --> 0	      |	Access   191: VA: 64181 (0xfab5) VPN:  250 VPO:   181  TLB:0 PF:1 --> 0
+Access   192: VA: 54879 (0xd65f) VPN:  214 VPO:   95  TLB:0 PF:0 --> -105     |	Access   192: VA: 54879 (0xd65f) VPN:  214 VPO:    95  TLB:0 PF:1 --> -105
+Access   207: VA: 62678 (0xf4d6) VPN:  244 VPO:  214  TLB:0 PF:1 --> 61	      |	Access   207: VA: 62678 (0xf4d6) VPN:  244 VPO:   214  TLB:0 PF:0 --> 61
+Access   208: VA: 26021 (0x65a5) VPN:  101 VPO:  165  TLB:0 PF:0 --> 0	      |	Access   208: VA: 26021 (0x65a5) VPN:  101 VPO:   165  TLB:1 PF:0 --> 0
+Access   217: VA: 41452 (0xa1ec) VPN:  161 VPO:  236  TLB:0 PF:0 --> 0	      |	Access   217: VA: 41452 (0xa1ec) VPN:  161 VPO:   236  TLB:1 PF:0 --> 0
+Access   238: VA: 56650 (0xdd4a) VPN:  221 VPO:   74  TLB:0 PF:0 --> 55	      |	Access   238: VA: 56650 (0xdd4a) VPN:  221 VPO:    74  TLB:0 PF:1 --> 55
+Access   240: VA: 38920 (0x9808) VPN:  152 VPO:    8  TLB:0 PF:1 --> 0	      |	Access   240: VA: 38920 (0x9808) VPN:  152 VPO:     8  TLB:0 PF:0 --> 0
+...
+Access   898: VA: 53570 (0xd142) VPN:  209 VPO:   66  TLB:0 PF:0 --> 52	      |	Access   898: VA: 53570 (0xd142) VPN:  209 VPO:    66  TLB:0 PF:1 --> 52
+Access   900: VA:  3782 (0x0ec6) VPN:   14 VPO:  198  TLB:0 PF:1 --> 3	      |	Access   900: VA:  3782 (0x0ec6) VPN:   14 VPO:   198  TLB:0 PF:0 --> 3
+Access   905: VA: 59968 (0xea40) VPN:  234 VPO:   64  TLB:0 PF:1 --> 0	      |	Access   905: VA: 59968 (0xea40) VPN:  234 VPO:    64  TLB:0 PF:0 --> 0
+Access   909: VA: 46388 (0xb534) VPN:  181 VPO:   52  TLB:0 PF:0 --> 0	      |	Access   909: VA: 46388 (0xb534) VPN:  181 VPO:    52  TLB:0 PF:1 --> 0
+Access   914: VA: 22345 (0x5749) VPN:   87 VPO:   73  TLB:0 PF:0 --> 0	      |	Access   914: VA: 22345 (0x5749) VPN:   87 VPO:    73  TLB:1 PF:0 --> 0
+Access   915: VA: 46463 (0xb57f) VPN:  181 VPO:  127  TLB:0 PF:0 --> 95	      |	Access   915: VA: 46463 (0xb57f) VPN:  181 VPO:   127  TLB:1 PF:0 --> 95
+Access   928: VA: 28848 (0x70b0) VPN:  112 VPO:  176  TLB:0 PF:0 --> 0	      |	Access   928: VA: 28848 (0x70b0) VPN:  112 VPO:   176  TLB:0 PF:1 --> 0
+Access   930: VA: 18351 (0x47af) VPN:   71 VPO:  175  TLB:0 PF:1 --> -21      |	Access   930: VA: 18351 (0x47af) VPN:   71 VPO:   175  TLB:0 PF:0 --> -21
+Access   937: VA: 63140 (0xf6a4) VPN:  246 VPO:  164  TLB:0 PF:1 --> 0	      |	Access   937: VA: 63140 (0xf6a4) VPN:  246 VPO:   164  TLB:0 PF:0 --> 0
+Access   939: VA: 63437 (0xf7cd) VPN:  247 VPO:  205  TLB:0 PF:1 --> 0	      |	Access   939: VA: 63437 (0xf7cd) VPN:  247 VPO:   205  TLB:0 PF:0 --> 0
+Access   942: VA: 38753 (0x9761) VPN:  151 VPO:   97  TLB:0 PF:1 --> 0	      |	Access   942: VA: 38753 (0x9761) VPN:  151 VPO:    97  TLB:0 PF:0 --> 0
+Access   946: VA: 46388 (0xb534) VPN:  181 VPO:   52  TLB:0 PF:1 --> 0	      |	Access   946: VA: 46388 (0xb534) VPN:  181 VPO:    52  TLB:0 PF:0 --> 0
+Access   947: VA: 63650 (0xf8a2) VPN:  248 VPO:  162  TLB:0 PF:1 --> 62	      |	Access   947: VA: 63650 (0xf8a2) VPN:  248 VPO:   162  TLB:0 PF:0 --> 62
+Access   948: VA: 36636 (0x8f1c) VPN:  143 VPO:   28  TLB:0 PF:1 --> 0	      |	Access   948: VA: 36636 (0x8f1c) VPN:  143 VPO:    28  TLB:0 PF:0 --> 0
+Access   949: VA: 21947 (0x55bb) VPN:   85 VPO:  187  TLB:0 PF:1 --> 110      |	Access   949: VA: 21947 (0x55bb) VPN:   85 VPO:   187  TLB:0 PF:0 --> 110
+Access   968: VA: 34070 (0x8516) VPN:  133 VPO:   22  TLB:0 PF:0 --> 33	      |	Access   968: VA: 34070 (0x8516) VPN:  133 VPO:    22  TLB:0 PF:1 --> 33
+Access   971: VA:  9277 (0x243d) VPN:   36 VPO:   61  TLB:0 PF:0 --> 0	      |	Access   971: VA:  9277 (0x243d) VPN:   36 VPO:    61  TLB:1 PF:0 --> 0
+Access   973: VA: 44860 (0xaf3c) VPN:  175 VPO:   60  TLB:0 PF:0 --> 0	      |	Access   973: VA: 44860 (0xaf3c) VPN:  175 VPO:    60  TLB:0 PF:1 --> 0
+Access   976: VA: 57751 (0xe197) VPN:  225 VPO:  151  TLB:0 PF:0 --> 101      |	Access   976: VA: 57751 (0xe197) VPN:  225 VPO:   151  TLB:0 PF:1 --> 101
+Access   979: VA: 42816 (0xa740) VPN:  167 VPO:   64  TLB:0 PF:0 --> 0	      |	Access   979: VA: 42816 (0xa740) VPN:  167 VPO:    64  TLB:0 PF:1 --> 0
+@@@ End Checking faults 15 8
+Access   997: VA:  8940 (0x22ec) VPN:   34 VPO:  236 ppn:   20 ppa: 5356 (14ec) TLB:0 PF:1 --> 0
+Access   998: VA:  9929 (0x26c9) VPN:   38 VPO:  201 ppn:   21 ppa: 5577 (15c9) TLB:0 PF:1 --> 0
+Access   999: VA: 45563 (0xb1fb) VPN:  177 VPO:  251 ppn:   22 ppa: 5883 (16fb) TLB:0 PF:1 --> 126
+Access  1000: VA: 12107 (0x2f4b) VPN:   47 VPO:   75 ppn:   23 ppa: 5963 (174b) TLB:0 PF:1 --> -46
+
+Elapsed time:  1000
+TLB misses:     998
+Page faults:    537
+TLB hit rate:    0.002
+Page fault rate: 0.537
+
+----------------------------------------------------------------
+LRU Physical memory 15 page 13
+0.001u 0.000s 0:00.00 0.0%	0+0k 0+8io 0pf+0w
+Job exited with status 0
+*** LRU printout starting checking values 15 x 13
+
+BackingStore = ../../ANS/backing.bin
+Address file = ../../ANS/addresses-2.txt
+Address size = 32768 (2 to the power of 15)
+Page size    = 8192  (2 to the power of 13)
+Access     1: VA:     0 (0x0000) VPN:    0 VPO:    0 ppn:    0 ppa:    0 (0000) TLB:0 PF:1 --> 0
+Access     2: VA: 16394 (0x400a) VPN:    2 VPO:   10 ppn:    1 ppa: 8202 (200a) TLB:0 PF:1 --> 16
+Access     3: VA: 32769 (0x8001) VPN:    4 VPO:    1 ppn:    2 ppa: 16385 (4001) TLB:0 PF:1 --> 0
+Access     4: VA: 49159 (0xc007) VPN:    6 VPO:    7 ppn:    3 ppa: 24583 (6007) TLB:0 PF:1 --> 1
+Access     5: VA:    10 (0x000a) VPN:    0 VPO:   10 ppn:    4 ppa: 32778 (800a) TLB:0 PF:1 --> 0
+Access     6: VA: 49157 (0xc005) VPN:    6 VPO:    5 ppn:    3 ppa: 24581 (6005) TLB:0 PF:0 --> 0
+Access     7: VA: 65530 (0xfffa) VPN:    7 VPO: 8186 ppn:    1 ppa: 16378 (3ffa) TLB:0 PF:1 --> 63
+Access     8: VA: 16394 (0x400a) VPN:    2 VPO:   10 ppn:    2 ppa: 16394 (400a) TLB:0 PF:1 --> 16
+
+Elapsed time:     8
+TLB misses:       8
+Page faults:      7
+TLB hit rate:    0.000
+Page fault rate: 0.875
+
+The VPNs being accessed are 0, 2, 4, 6, 0, 6, 7, and 2
+Accesses 1 to 3 should get new physical pages, access 5 reuses the same PPN as
+access 10. Access 6 uses the same access as access 3. Access 7 needs a new
+page. At this point the LRU page is the one selected in the 2nd access, so it
+is the one choosen. (ie the PPN Of the last line must be the same as
+the PPN of access 2) The 8th access is to VPN 2 which was just invalidated
+because the physical page it is pointing to was evicted. If wasn't invalidated
+then there will be TLB hit, when there shouldn't be, and the wrong value returned.
+Since VPN 2 is invalid it must be brought in and will go to the physical page
+brought in on access 3.
+A possible set of PPNs for this could be 0 1 2 3 0 3 1 2
+depending upon the order the initial 4 physical pages are selected.
+
+@@@ LRU End Checking faults 15 13
+rm 'a16_p14LRU.ans'
+rm 'testLRU16_14.ans'

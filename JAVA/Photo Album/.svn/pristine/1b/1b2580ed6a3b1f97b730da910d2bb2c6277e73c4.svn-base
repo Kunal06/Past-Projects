@@ -1,0 +1,120 @@
+Task 1
+from-
+public Album(String name) {
+		name = name;
+        photos = new HashSet<Photo>();
+	}
+	to
+		public Album(String name) {
+    		this.name = name;
+            photos = new HashSet<Photo>();
+    	}
+Task2
+from-
+@Test
+    public void testRenameToSame() {
+        aTagManager.createTag("A Tag");
+        assertFalse(aTagManager.renameTag("A Tag", "A Tag"));
+    }
+    to
+      @Test
+        public void testRenameDNE() {
+            aTagManager.createTag("A Tag");
+            assertTrue(aTagManager.renameTag("No Tag", "A Tag"));
+        }
+        from-
+        @Test
+        	public void testRenameTagWithPhotos() {
+        		Tag birthdayTag = aTagManager.findTag("birthday");
+        		photo1.addTag(birthdayTag);
+        		aTagManager.renameTag("birthday", "newBirthday");
+        		assertNull(aTagManager.findTag("birthday"));
+        		assertNotNull(aTagManager.findTag("newBirthday"));
+        		assertEquals(birthdayTag, aTagManager.findTag("newBirthday"));
+        		Set<Tag> tagsForPhoto = photo1.getTags();
+        		assertEquals(1, tagsForPhoto.size());
+        		Tag theTag = (Tag) tagsForPhoto.toArray()[0];
+        		assertEquals("birthday", theTag.getName());
+        	}
+        to-
+	@Test
+	public void testRenameTagWithPhotos() {
+		Tag birthdayTag = aTagManager.findTag("birthday");
+		photo1.addTag(birthdayTag);
+		aTagManager.renameTag("birthday", "newBirthday");
+		assertNull(aTagManager.findTag("birthday"));
+		assertNotNull(aTagManager.findTag("newBirthday"));
+		assertEquals(birthdayTag, aTagManager.findTag("newBirthday"));
+		Set<Tag> tagsForPhoto = photo1.getTags();
+		assertEquals(1, tagsForPhoto.size());
+		Tag theTag = (Tag) tagsForPhoto.toArray()[0];
+		assertEquals("newBirthday", theTag.getName());
+	}
+Task 3
+from-
+public Set<Photo> findPhotosInDateRange(Date start, Date end){
+		Set<Photo> photos = new HashSet<Photo>();
+
+		for(Photo photo: getPhotos()) {
+            Date dateCreated = photo.getDateCreated();
+			if(!dateCreated.before(start) || !dateCreated.after(end))
+				photos.add(photo);
+		}
+
+		return Collections.unmodifiableSet(photos);
+	}
+
+to-
+public Set<Photo> findPhotosInDateRange(Date start, Date end){
+		Set<Photo> photos = new HashSet<Photo>();
+
+		for(Photo photo: getPhotos()) {
+            Date dateCreated = photo.getDateCreated();
+            if ((dateCreated.after(start) && dateCreated.before(end)) || dateCreated.equals(start) || dateCreated.equals(end) )
+            {
+                photos.add(photo);
+            }
+		}
+
+		return Collections.unmodifiableSet(photos);
+	}
+Task 4
+from-
+    public void flipHorizontal() {
+        int width = image.getWidth();
+        int height = image.getHeight();
+
+        for (int x = 0; x < width / 2; x++) {
+            for (int y = 0; y < height; y++) {
+                image.setRGB(width - 1 - x, y, image.getRGB(x, y));
+                image.setRGB(x, y, image.getRGB(width - 1 - x, y));
+            }
+        }
+    }
+
+to-
+public void flipHorizontal() {
+           int width = image.getWidth();
+           int height = image.getHeight();
+
+           for (int x = 0; x < width / 2; x++) {
+               for (int y = 0; y < height; y++) {
+                   final int l = image.getRGB( width - (x + 1), y);
+                   final int r = image.getRGB( x, y);
+                   image.setRGB( x, y, l );
+                   image.setRGB( width - (x + 1), y, r );
+               }
+           }
+
+
+       }
+       Task 5
+
+      from-
+      private boolean isInBounds(int x, int y) {
+                   return x > 0 && x < image.getWidth() && y > 0 && y < image.getHeight();
+               }
+      to-
+       private boolean isInBounds(int x, int y) {
+              return x >= 0 && x < image.getWidth() && y >= 0 && y < image.getHeight();
+          }
